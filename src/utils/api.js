@@ -29,7 +29,9 @@ export function fetchComments(ids) {
   );
 }
 
-export function fetchMainPosts(type) {
+
+
+https: export function fetchMainPosts(type) {
   return fetch(`${api}/${type}stories${json}`)
     .then((res) => res.json())
     .then((ids) => {
@@ -48,7 +50,8 @@ export function fetchUser(id) {
 }
 
 export function fetchPosts(ids) {
-  return Promise.all(ids.map(fetchItem)).then((posts) =>
+  return Promise.all(ids.map(fetchItem))
+  .then((posts) =>
     removeDeleted(onlyPosts(removeDead(posts)))
   );
 }
