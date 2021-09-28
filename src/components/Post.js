@@ -1,11 +1,10 @@
-import React from "react"
-import Title from "./Title.js"
+import React from "react";
+import Title from "./Title.js";
 
+export default function Post({ posts }) {
 
-
-export default function Post(props){
-  const posts = props.posts
   return (
+    // <div>{test}</div>
     <ul>
       {posts.map((post) => (
         <li key={post.id}>
