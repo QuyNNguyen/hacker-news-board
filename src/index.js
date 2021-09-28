@@ -9,12 +9,21 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <div className="container">
-      <Nav />
-      <React.Suspense>
-        <Switch>
-          <Route exact path="/" component={NewsBoard} />
-        </Switch>
-      </React.Suspense>
+        <Nav />
+        <React.Suspense>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={(props) => <NewsBoard {...props} type={"top"} />}
+            />
+            <Route
+              exact
+              path="/new"
+              render={(props) => <NewsBoard {...props} type={"new"} />}
+            />
+          </Switch>
+        </React.Suspense>
       </div>
     </Router>
   </React.StrictMode>,

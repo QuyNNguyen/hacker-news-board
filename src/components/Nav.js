@@ -6,15 +6,29 @@ const activeStyle = {
 };
 
 export default function Nav(){
-  return(
-  <nav className= 'row space-between'>
-    <ul className= "row nav">
-      <li>
-        <NavLink exact to="/" activeStyle={activeStyle} className="nav-link"> Hot </NavLink>
-        <NavLink exact to="/new" activeStyle={activeStyle} className="nav-link"> New </NavLink>
-      </li>
-    </ul>  
-  </nav>
-  )
+  return (
+    <nav className="row space-between">
+      <ul className="row nav">
+        <li>
+          <NavLink exact to="/" activeStyle={activeStyle} className="nav-link">
+            {" "}
+            Hot{" "}
+          </NavLink>
+          <NavLink
+            exact
+            to="/new"
+            activeStyle={activeStyle}
+            className="nav-link"
+          >
+            {" "}
+            New{" "}
+          </NavLink>
+        </li>
+      </ul>
+      <button style={{ fontSize: 30 }} className="btn-clear">
+        🌞
+      </button>
+    </nav>
+  );
 }
 
