@@ -19,6 +19,12 @@ export default class NewsBoard extends React.Component {
     this.handleFetch();
   }
 
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    if (this.props.type !== prevProps.type) {
+      this.handleFetch();
+    }
+  }
   handleFetch() {
     this.setState({
       posts: null,
@@ -43,13 +49,12 @@ export default class NewsBoard extends React.Component {
           loading: false,
         })
       );
-    
+
     // console.log(this.state.posts)
   }
   //mapping promises array value
   render() {
     const { posts, loading, error } = this.state;
-
 
     if (loading === true) {
       return <BoxLoading color="rgb(187, 46, 31)" />;
