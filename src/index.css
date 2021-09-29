@@ -73,3 +73,10 @@ li {
   border: none;
   background: transparent;
 }
+
+
+.post{margin:20px 0;}
+
+.meta-info-light{margin-top:5px;color:gray;}
+.meta-info-light a{color:black;}
+.meta-info-light span{margin:10px 0;margin-right:6px;}
