@@ -4,13 +4,14 @@ import "./index.css";
 import Nav from "./components/Nav.js";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NewsBoard from "./components/NewsBoard";
+import { BoxLoading } from "react-loadingg";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <div className="container">
         <Nav />
-        <React.Suspense>
+        <React.Suspense fallback={<BoxLoading color="rgb(187, 46, 31)" />}>
           <Switch>
             <Route
               exact
