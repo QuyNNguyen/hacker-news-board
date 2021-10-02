@@ -2,6 +2,7 @@ import React from "react";
 // import { render } from "react-dom"
 import { fetchMainPosts } from "../utils/api";
 import { BoxLoading } from "react-loadingg";
+import { ThemeProvider } from "../context/theme.js";
 import Post from "./Post.js";
 
 export default class NewsBoard extends React.Component {
@@ -12,6 +13,12 @@ export default class NewsBoard extends React.Component {
       posts: null,
       error: null,
       loading: true,
+      theme: "light",
+      toggleTheme: () => {
+        this.setState(({ theme }) => ({
+          theme: theme === "light" ? "dark" : "light",
+        }));
+      },
     };
   }
 
@@ -60,7 +67,8 @@ export default class NewsBoard extends React.Component {
       return <BoxLoading color="rgb(187, 46, 31)" />;
     }
 
-    return <Post posts={posts} />;
-    return null;
+    return (
+      <Post posts={posts} />
+    )
   }
 }
